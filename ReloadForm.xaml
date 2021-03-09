@@ -1,0 +1,43 @@
+﻿<Window x:Class="Variedades.ReloadForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Variedades"
+        mc:Ignorable="d"
+        Title="ReloadForm" Height="600" Width="400" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="20" Margin="22,31,0,10" Text="Customer" HorizontalAlignment="Left" Width="120"   Grid.Row="0"/>
+        <TextBlock FontSize="20" Text="Provider" Margin="22,18,0,16" HorizontalAlignment="Left" Width="92" Grid.Row="1" />
+        <TextBlock FontSize="20" Text="Package" HorizontalAlignment="Left" Width="92" Grid.Row="2" Margin="22,0,0,28"/>
+        <TextBlock FontSize="20" HorizontalAlignment="Right" Width="92" Text="Add-on" Grid.Row="3" Margin="0,10,278,28"/>
+        <TextBlock FontSize="20"  HorizontalAlignment="Right" Width="120" Text="Extra Charge" Grid.Row="4" Margin="0,10,250,28"/>
+        <TextBlock FontSize="20"  HorizontalAlignment="Right" Width="120" Text="Expires On" Grid.Row="5" Margin="0,10,250,30"/>
+        <TextBox x:Name="CustomerName" HorizontalAlignment="Right" Height="32" Margin="0,31,32,7"  Text="" VerticalAlignment="Center" Width="170" IsEnabled="False" Grid.Row="0" TextAlignment="Center"/>
+        <ComboBox x:Name="CMB_ProviderList"  Margin="190,18,32,21"  Width="170" Height="31" Grid.Row="1" RenderTransformOrigin="0.547,-1.032"/>
+        <TextBox x:Name="PackagePrice" HorizontalAlignment="Right" Height="30" Margin="0,5,32,55" TextWrapping="NoWrap" TextAlignment="Right" Text="0.00" VerticalAlignment="Center" Width="170" Grid.Row="2" PreviewTextInput="NumberValidationTextBox" LostFocus="PackagePrice_LostFocus" GotFocus="PackagePrice_GotFocus" />
+        <TextBox x:Name="packageDesc" HorizontalAlignment="Right" Height="40" Margin="0,40,32,0" VerticalAlignment="Top" Width="338" Grid.Row="2"   />
+
+        <TextBox x:Name="AddOnPrice" HorizontalAlignment="Right" Height="32" Margin="0,10,32,48" TextWrapping="NoWrap" TextAlignment="Right" Text="0.00" VerticalAlignment="Center" Width="170" Grid.Row="3" PreviewTextInput="NumberValidationTextBox" LostFocus="AddOnPrice_LostFocus" GotFocus="AddOnPrice_GotFocus"/>
+        <TextBox x:Name="AddOnDesc" Height="40" Margin="0,46,32,0" VerticalAlignment="Top" Grid.Row="3" HorizontalAlignment="Right" Width="338"/>
+
+        <TextBox x:Name="ExtraChargeAmount" HorizontalAlignment="Right" Height="31" Margin="0,10,32,49" TextWrapping="NoWrap" TextAlignment="Right" Text="0.00" VerticalAlignment="Center" Width="170" Grid.Row="4" PreviewTextInput="NumberValidationTextBox" LostFocus="ExtraChargeAmount_LostFocus" GotFocus="ExtraChargeAmount_GotFocus"/>
+        <TextBox x:Name="ExtraChargeDesc" Height="40" Margin="0,46,32,0" VerticalAlignment="Top" Grid.Row="4" HorizontalAlignment="Right" Width="338"/>
+        <DatePicker x:Name="Expiry_Date" HorizontalAlignment="Left" Margin="190,10,0,0" VerticalAlignment="Top" Width="170" Height="31" Grid.Row="5"/>
+        <Button x:Name="Bt_ReloadConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="22,12,0,0" VerticalAlignment="Top" Width="120" Height="42" Click="bt_save_Click" Grid.Row="7"/>
+        <Button x:Name="Bt_ReloadReset" Content="Reset" HorizontalAlignment="Left" Margin="240,12,0,0" VerticalAlignment="Top" Width="120" Height="42" Click="bt_reset_Click" Grid.Row="7"/>
+        <TextBlock x:Name="TotalTxt" FontSize="20"   HorizontalAlignment="Right" Width="338" Text="Total : " TextAlignment="Center" Grid.Row="6" Margin="0,0,32,0"  />
+
+
+    </Grid>
+</Window>
